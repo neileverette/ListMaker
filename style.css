@@ -1,0 +1,27 @@
+body{
+	margin-top: 4em;
+	margin-left: 3em;
+	font-family: "helvetica";
+	font-size: .9em;
+	}
+	
+#addButton{
+	margin-top: 2em;
+	font-family: "helvetica";
+	text-transform:uppercase;
+	color: blue;
+	}
+	
+.title{
+	font-size: 2em;
+	}
+	
+.input{
+	font-family: "helvetica";
+	font-size: 2em;
+	background-color:#eee;
+	border: 0px solid;
+	height:35px;
+	width:160px;
+	color:#000;
+}
