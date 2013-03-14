@@ -1,16 +1,32 @@
 $(document).ready(function(){
 
 
-	function editTitle(){
-		//CLICK ON LABEL - CHANGES TO INPUT BOX	
+	var addButton = $('#addButton');
+	var listTitle = $('#listName');
+
+	function swapTitleContents(){		
 		$('#listName').replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
 		$('#inputField').focus();
-		titleClickLabel();
-		titleSaveTitle();
-		}	
-
+		//commmitTitle();
+		
+		$('input[name=listName]').focusout(function(){
+			saveTitle();
+			});
+			
+		$(document).keypress(function(e) { //JQuery 
+   		if(e.keyCode == 13) {
+        //checkInput();
+        saveTitle();
+    	}
+		
+		
+		
+		}	//SWAPS THE HEADER CONTENT
+		
+		
+		
+		
 	function titleClickLabel(){
-		//CLICK ON LABEL - CHANGES TO INPUT BOX	
 		$(listTitle).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
 		$('#inputField').focus();
 		}	
@@ -18,38 +34,53 @@ $(document).ready(function(){
 		//CLICK ON LABEL - CHANGES TO INPUT BOX	
 		$('#listNameNew').replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
 		$('#inputField').focus();
-		}		
-	function updateHeader(){
-		console.log("I work");
-	}	
+		}			
 	function titleSwapContent(){
 		// ON F0CUS, SWITCHES CONTENT
 		$('input[name=listName]').focus(function(){
 			$('input[name=listName]').val('');
 			});
 		}		
-	function titleSaveTitle(){
+	function commmitTitle(){
 		// ON F0CUS OUT, SWITCHES CONTENT
-		$('input[name=listName]').focusout(function(){
-		var newTitle = $('input[name=listName]').val();
-			$('input[name=listName]').replaceWith('<div id="listName" class="title">' + newTitle +'</div>');
-		$('#listName').click(function(){
-				console.log("I work");
-				editTitle();
-			});
-			});
+
+	});
+	
+
+	
 }
+	function saveTitle(){
+		var newTitle = $('input[name=listName]').val();
+		$('input[name=listName]').replaceWith('<div id="namedList" class="title">' + newTitle +'</div>');
+		editTitle();
+	}
+	function checkInput(){
+	
+		if ($('input[name=listName]').val() ===""){
+
+		};
+		};
 
 
-	var addButton = $('#addButton');
-	var listTitle = $('#listName');
+	
+	newListTitle();
 	
 	
-	$(listTitle).click(function(){
-		
-		titleClickLabel(); // CLICK TITLE TO EDIT
-		titleSaveTitle();	// SAVES TITLE TO PAGE	
-	});	
+	
+	function newListTitle(){ 
+		$('#listName').click(function(){
+			titleClickLabel(); 
+			//commmitTitle();	
+	});
+	};// FUNCTION TO ADD NAME TO UNAMED LIST	
+	function editTitle(){
+		$('#namedList').click(function(){
+			swapTitleContents();
+		});
+		}; // FUNCTION TO EDTI A NAMED LIST	
+	
+	
+	//MAKE THESE INTO FUNCTIONS
 	
 	$(addButton).mouseover(function(){
 		$(addButton).css('color', 'red');
@@ -62,6 +93,8 @@ $(document).ready(function(){
 	$(addButton).click(function(){
 		console.log("I work");
 	})	
+	
+
 
 });
 
