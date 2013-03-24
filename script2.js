@@ -43,8 +43,10 @@ $(document).ready(function(){
 	
 	// EDIT A LIST ITEM
 	function editListItem(){
-		console.log("This works");
-	
+		$('p.list').click(function(){
+			console.log("I work");
+			$(this).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "Replace Me">');
+		});	
 	}
 		
 	
@@ -62,7 +64,6 @@ $(document).ready(function(){
     		}    		
 		});
 	});	
-	
 	addButton.hover(function(){
 		addButton.css('color', 'red');
 	});
