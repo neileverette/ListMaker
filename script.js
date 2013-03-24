@@ -4,7 +4,7 @@ $(document).ready(function(){
 	function swapTitleContents(){		
 		$('#listName').replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
 		$('#inputField').focus();
-		//commmitTitle();
+		commmitTitle();
 		}	//SWAPS THE HEADER CONTENT
 	function titleClickLabel(){
 		$(listTitle).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
@@ -21,6 +21,23 @@ $(document).ready(function(){
 			$('input[name=listName]').val('');
 			});
 		}		
+	function commmitTitle(){
+		// ON F0CUS OUT, SWITCHES CONTENT
+		$('input[name=listName]').focusout(function(){
+			//checkInput();
+			saveTitle();
+			});
+			
+		$(document).keypress(function(e) { //JQuery 
+   		if(e.keyCode == 13) {
+        checkInput();
+        saveTitle();
+    	}
+	});
+	
+
+	
+}
 	function saveTitle(){
 		var newTitle = $('input[name=listName]').val();
 		$('input[name=listName]').replaceWith('<div id="namedList" class="title">' + newTitle +'</div>');
@@ -43,6 +60,7 @@ $(document).ready(function(){
 	function newListTitle(){ 
 		$('#listName').click(function(){
 			titleClickLabel(); 
+			commmitTitle();	
 	});
 	};// FUNCTION TO ADD NAME TO UNAMED LIST	
 	function editTitle(){
