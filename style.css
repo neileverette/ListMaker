@@ -24,4 +24,14 @@ body{
 	height:35px;
 	width:200px;
 	color:#000;
-}
+	}
+
+.notDone {
+	font-size: 2em;
+	color: blue;
+	}
+.done {
+	font-size: 2em;
+	color: gray;
+	text-decoration: line-through;
+	}

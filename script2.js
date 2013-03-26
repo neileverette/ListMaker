@@ -44,8 +44,10 @@ $(document).ready(function(){
 	// EDIT A LIST ITEM
 	function editListItem(){
 		$('p.list').click(function(){
-			console.log("I work");
-			$(this).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "Replace Me">');
+			//console.log("I work");
+			//$(this).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "Replace Me">');
+			$(this).addClass("done");
+			//$(this).fadeOut('slow');
 		});	
 	}
 		
@@ -59,7 +61,7 @@ $(document).ready(function(){
 		});	
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
    			if(e.keyCode == 13) {
-        		$('#toDoItem').replaceWith('<p class = "list">' + $('#toDoItem').val() + '</p>');
+        		$('#toDoItem').replaceWith('<p class = "list" class = "notDone">' + $('#toDoItem').val() + '</p>');
         		editListItem();
     		}    		
 		});
@@ -70,5 +72,6 @@ $(document).ready(function(){
 	addButton.mouseout(function(){
 		addButton.css('color', 'blue');
 	});
+	
 
 });
