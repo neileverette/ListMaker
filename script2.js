@@ -28,12 +28,24 @@ $(document).ready(function(){
 		newTitle.replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "">');
 		$('#inputField').focus(); // PUTS INPUT INTO FOCUS
 		$('#inputField').focusout(function(){  // SETS TITLE ON CLICK OUT OF INPUT BOX
-			$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>' + $('#inputField').val() + '</p></span>');
-			existingTitleClick();
-		}); //REPLACES TITLE ON CLICK OUT
+		
+			if ($('#inputField').val()===""){
+				$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>List Name</p></span>');
+				existingTitleClick();
+				}else{
+					$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>' + $('#inputField').val() + '</p></span>');
+					existingTitleClick();
+					}
+					}); //REPLACES TITLE ON CLICK OUT
+					
+					
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
    			if(e.keyCode == 13) {
-        		$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>' + $('#inputField').val() + '</p></span>');
+   				if($('#inputField').val()===""){
+        			$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>List Name</p></span>');
+        		}else{
+        			$('#inputField').replaceWith('<span id="existingTitle" class = "title"><p>' + $('#inputField').val() + '</p></span>');
+        		}
     	}
     		existingTitleClick();
     	}); // REPLACES TITLE ON ENTER
