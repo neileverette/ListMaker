@@ -43,20 +43,17 @@ $(document).ready(function(){
 	
 	// EDIT A LIST ITEM
 	function editListItem(){
-		$('p.list').click(function(){
-			//console.log("I work");
-			//$(this).replaceWith('<input type="text" id="inputField" class = "input" name="listName"  value= "Replace Me">');
+		$("p.list").click(function(){
 			$(this).addClass("done");
-			//$(this).fadeOut('slow');
 		});	
 	}
 		
 	
 	addButton.click(function(){
-		$('p').last().append('<div><input type="text" id = "toDoItem" class = "input" value= ""></div>');
+		$('p').last().after('<div><input type="text" id = "toDoItem" class = "input" value= ""></div>');
 		$('#toDoItem').focus();
 		$('#toDoItem').focusout(function(){
-			$('#toDoItem').replaceWith('<p class = "list">' + $('#toDoItem').val() + '</p>');
+			$('#toDoItem').replaceWith('<p class = "list">' + $('#toDoItem').val() + '</div>');
 			editListItem();
 		});	
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
