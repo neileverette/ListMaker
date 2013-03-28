@@ -2,7 +2,8 @@ body{
 	margin-top: 4em;
 	margin-left: 3em;
 	font-family: "helvetica";
-	font-size: .9em;
+	font-size: 1em;
+	height:1em;
 	}
 	
 #addButton{
@@ -14,6 +15,7 @@ body{
 	
 .title{
 	font-size: 2em;
+	height: 2em;
 	}
 	
 .input{
@@ -21,17 +23,25 @@ body{
 	font-size: 2em;
 	background-color:#eee;
 	border: 0px solid;
-	height:35px;
+	height: 1.5em;
 	width:200px;
 	color:#000;
 	}
 
+.listInput{
+	font-size: 1em;
+	background-color:#eee;
+	border: 0px solid;
+	height: 1em;
+	width:200px;
+	color:#000;
+	}	
+
 .notDone {
-	font-size: 2em;
-	color: blue;
+	font-size: 1em;
 	}
 .done {
-	font-size: 2em;
+	font-size: 1em;
 	color: gray;
 	text-decoration: line-through;
 	}

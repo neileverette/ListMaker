@@ -52,25 +52,23 @@ $(document).ready(function(){
     	
 	});
 	
-	
 	// EDIT A LIST ITEM
 	function editListItem(){
 		$("p.list").click(function(){
 			$(this).addClass("done");
 		});	
-	}
-		
+	}		
 	
 	addButton.click(function(){
-		$('p').last().after('<div><input type="text" id = "toDoItem" class = "input" value= ""></div>');
+		$('p').last().after('<div><input type="text" id = "toDoItem" class = "listInput" value= ""></div>');
 		$('#toDoItem').focus();
 		$('#toDoItem').focusout(function(){
-			$('#toDoItem').replaceWith('<p class = "list">' + $('#toDoItem').val() + '</div>');
+			$('#toDoItem').replaceWith('<p class = "notDone">' + $('#toDoItem').val() + '</div>');
 			editListItem();
 		});	
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
    			if(e.keyCode == 13) {
-        		$('#toDoItem').replaceWith('<p class = "list" class = "notDone">' + $('#toDoItem').val() + '</p>');
+        		$('#toDoItem').replaceWith('<p class = "notDone">' + $('#toDoItem').val() + '</p>');
         		editListItem();
     		}    		
 		});
