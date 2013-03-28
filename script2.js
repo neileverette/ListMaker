@@ -20,7 +20,6 @@ $(document).ready(function(){
     		}); // REPLACES TITLE ON ENTER
 		});
 		
-		
 	} 
 	
 	// ADDS A NEW TITLE
@@ -52,10 +51,21 @@ $(document).ready(function(){
     	
 	});
 	
+	// TOGGLE CROSS OUT STYLE OF LIST
+	function changeStyle(){
+		//if($(this).)
+	}
+	
 	// EDIT A LIST ITEM
 	function editListItem(){
-		$("p.list").click(function(){
+		$("p.notDone").click(function(){
 			$(this).addClass("done");
+			editListItem();
+		});	
+		
+		$("p.done").click(function(){
+			$(this).addClass("done");
+			editListItem();
 		});	
 	}		
 	
