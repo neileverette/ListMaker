@@ -4,6 +4,7 @@ body{
 	font-family: "helvetica";
 	font-size: 1em;
 	height:1em;
+	background-color: #e7e7e7;
 	}
 	
 #addButton{
@@ -16,6 +17,7 @@ body{
 .title{
 	font-size: 2em;
 	height: 2em;
+	color: #333333;
 	}
 	
 .input{
@@ -29,10 +31,11 @@ body{
 	}
 
 .listInput{
+	font-family: "helvetica";
 	font-size: 1em;
 	background-color:#eee;
 	border: 0px solid;
-	height: 1em;
+	height: 1.3em;
 	width:200px;
 	color:#000;
 	}	

@@ -59,12 +59,12 @@ $(document).ready(function(){
 	// EDIT A LIST ITEM
 	function editListItem(){
 		$("p.notDone").click(function(){
-			$(this).addClass("done");
+			$(this).removeClass("notDone").addClass("done");
 			editListItem();
 		});	
 		
 		$("p.done").click(function(){
-			$(this).addClass("done");
+			$(this).removeClass("done").addClass("notDone");
 			editListItem();
 		});	
 	}		
