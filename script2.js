@@ -58,28 +58,45 @@ $(document).ready(function(){
 	
 	// EDIT A LIST ITEM
 	function editListItem(){
-		$("p.notDone").click(function(){
+		$("span.notDone").click(function(){
 			$(this).removeClass("notDone").addClass("done");
 			editListItem();
 		});	
 		
-		$("p.done").click(function(){
+		$("span.done").click(function(){
 			$(this).removeClass("done").addClass("notDone");
 			editListItem();
 		});	
-	}		
+	}	
+	
+	
+	
+	function listItemHover(){
+		
+		$('span.notDone').mouseover(function(){
+			$(this).css('color', 'red');
+			//$(this)
+		});
+		
+		$('span.notDone').mouseout(function(){
+			$(this).css('color', 'black');
+		});	
+	}	
 	
 	addButton.click(function(){
-		$('p').last().after('<div><input type="text" id = "toDoItem" class = "listInput" value= ""></div>');
+
+		$('#addButton').after('<div><input type="text" id = "toDoItem" class = "listInput" value= ""></div>');
 		$('#toDoItem').focus();
 		$('#toDoItem').focusout(function(){
-			$('#toDoItem').replaceWith('<p class = "notDone">' + $('#toDoItem').val() + '</div>');
+			$('#toDoItem').replaceWith('<div class = "listItem"><span class="notDone"><p>' + $('#toDoItem').val() + '</p></div>');
 			editListItem();
+			listItemHover();
 		});	
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
    			if(e.keyCode == 13) {
-        		$('#toDoItem').replaceWith('<p class = "notDone">' + $('#toDoItem').val() + '</p>');
+        		$('#toDoItem').replaceWith('<div class = "listItem"><span class="notDone"><p>' + $('#toDoItem').val() + '</p></div>');
         		editListItem();
+        		listItemHover();
     		}    		
 		});
 	});	

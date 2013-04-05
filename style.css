@@ -43,8 +43,23 @@ body{
 .notDone {
 	font-size: 1em;
 	}
+.notDoneHover {
+	color: red;
+	}	
+	
 .done {
 	font-size: 1em;
 	color: gray;
 	text-decoration: line-through;
+	}
+.doneHover {
+	color: red;
+	}	
+	
+.listItem{
+	}
+	
+.delete{
+	font-size: .8em;
+	color: #666666;
 	}
