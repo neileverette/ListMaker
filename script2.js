@@ -58,6 +58,7 @@ $(document).ready(function(){
 	
 	// EDIT A LIST ITEM
 	function editListItem(){
+
 		$("span.notDone").click(function(){
 			$(this).removeClass("notDone").addClass("done");
 			editListItem();
@@ -73,13 +74,15 @@ $(document).ready(function(){
 	
 	function listItemHover(){
 		
-		$('span.notDone').mouseover(function(){
+		//$('span.notDone').mouseover(function(){
+		$('.notDone').mouseover(function(){
 			$(this).css('color', 'red');
-			//$(this)
+			$(this).after('<img src = now.png>');
 		});
 		
-		$('span.notDone').mouseout(function(){
+		$('.notDone').mouseout(function(){
 			$(this).css('color', 'black');
+			$('img').remove();
 		});	
 	}	
 	
@@ -88,13 +91,13 @@ $(document).ready(function(){
 		$('#addButton').after('<div><input type="text" id = "toDoItem" class = "listInput" value= ""></div>');
 		$('#toDoItem').focus();
 		$('#toDoItem').focusout(function(){
-			$('#toDoItem').replaceWith('<div class = "listItem"><span class="notDone"><p>' + $('#toDoItem').val() + '</p></div>');
+			$('#toDoItem').replaceWith('<div class = "listItem"><span><p class = "notDone">' + $('#toDoItem').val() + '</p></div>');
 			editListItem();
 			listItemHover();
 		});	
 		$(document).keypress(function(e) {  // SETS TITLE ON ENTER KEY
    			if(e.keyCode == 13) {
-        		$('#toDoItem').replaceWith('<div class = "listItem"><span class="notDone"><p>' + $('#toDoItem').val() + '</p></div>');
+        		$('#toDoItem').replaceWith('<div class = "listItem"><span><p class = "notDone">' + $('#toDoItem').val() + '</p></div>');
         		editListItem();
         		listItemHover();
     		}    		
